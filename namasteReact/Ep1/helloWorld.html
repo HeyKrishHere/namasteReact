@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- hello world from HTML -->
+    <h1>Hello world from HTML</h1>
+    <div class="parent"></div>
+    <div class="parent2"></div>
+    <!-- hello world from JavaScript -->
+    <script>
+        const element= document.createElement('h1');
+        element.innerHTML='Hello world form JavaScript';
+        document.querySelector(".parent").appendChild(element);
+    </script>
+    <!-- hello world from React -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script>
+        const newElement = React.createElement("h1",{id:"heading"},"Hello world from React");//this doesn't retrun a h1 tag but a object which is a react element
+        const root=ReactDOM.createRoot(document.querySelector('.parent2'));
+        root.render(newElement);// this will take the react element and create a h1 tag and add it to the parent2 div, if there is already some tag it will replace it
+    </script>
+</body>
+</html>
